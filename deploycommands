@@ -1,0 +1,35 @@
+
+ionic cordova run android --device
+
+keytool -genkey -v -keystore d:\my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias priya
+
+C:\Program Files\Java\jdk1.8.0_151\bin\keytool -genkey -v -keystore d:\my-release-key.jks -keyalg RS
+A -keysize 2048 -validity 10000 -alias priya
+
+Keytool:
+
+cd C:\Program Files\Java\jre1.8.0_151\bin
+
+keytool -genkey -v -keystore d:\my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias priya
+
+cd..
+cd jdk1.8.0_151
+cd bin
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore d:\my-release-key.jks android-release-unsigned.apk priya
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore d:\my-release-key.jks app-release-unsigned.apk priya
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.jks app-release-unsigned.apk priya
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore d:\my-release-key.jks app-release-unsigned.apk priya
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore d:\my-release-key.jks D:\ionicprojects\touristApp\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk priya
+
+zipalign -v 4 android-release-unsigned.apk HelloWorld.apk
+
+cd C:\Users\PRIv2c12515\AppData\Local\Android\Sdk\build-tools\27.0.3
+
+
+
+zipalign -v 4 D:\ionicprojects\touristApp\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk touristAppV1.apk
